@@ -18,45 +18,51 @@
 
 
 set(SOURCES
-  ${LIBDEFLATE_DIR}/lib/adler32.c
-  ${LIBDEFLATE_DIR}/lib/crc32.c
-  ${LIBDEFLATE_DIR}/lib/deflate_compress.c
-  ${LIBDEFLATE_DIR}/lib/deflate_decompress.c
-  ${LIBDEFLATE_DIR}/lib/gdeflate_compress.c
-  ${LIBDEFLATE_DIR}/lib/gdeflate_decompress.c
-  ${LIBDEFLATE_DIR}/lib/gzip_compress.c
-  ${LIBDEFLATE_DIR}/lib/gzip_decompress.c
-  ${LIBDEFLATE_DIR}/lib/utils.c
-  ${LIBDEFLATE_DIR}/lib/zlib_compress.c
-  ${LIBDEFLATE_DIR}/lib/zlib_decompress.c
-  ${LIBDEFLATE_DIR}/lib/x86/cpu_features.c
+  lib/adler32.c
+  lib/crc32.c
+  lib/deflate_compress.c
+  lib/deflate_decompress.c
+  lib/gdeflate_compress.c
+  lib/gdeflate_decompress.c
+  lib/gzip_compress.c
+  lib/gzip_decompress.c
+  lib/utils.c
+  lib/zlib_compress.c
+  lib/zlib_decompress.c
+  lib/x86/cpu_features.c
+  lib_gdeflate/GDeflateCompress.cpp
+  lib_gdeflate/GDeflateDecompress.cpp
 )
 
 set(HEADERS
-  ${LIBDEFLATE_DIR}/lib/adler32_vec_template.h
-  ${LIBDEFLATE_DIR}/lib/bt_matchfinder.h
-  ${LIBDEFLATE_DIR}/lib/crc32_table.h
-  ${LIBDEFLATE_DIR}/lib/crc32_vec_template.h
-  ${LIBDEFLATE_DIR}/lib/decompress_template.h
-  ${LIBDEFLATE_DIR}/lib/gdeflate_decompress_template.h
-  ${LIBDEFLATE_DIR}/lib/deflate_compress.h
-  ${LIBDEFLATE_DIR}/lib/deflate_constants.h
-  ${LIBDEFLATE_DIR}/lib/gzip_constants.h
-  ${LIBDEFLATE_DIR}/lib/hc_matchfinder.h
-  ${LIBDEFLATE_DIR}/lib/lib_common.h
-  ${LIBDEFLATE_DIR}/lib/matchfinder_common.h
-  ${LIBDEFLATE_DIR}/lib/unaligned.h
-  ${LIBDEFLATE_DIR}/lib/zlib_constants.h
-  ${LIBDEFLATE_DIR}/lib/x86/adler32_impl.h
-  ${LIBDEFLATE_DIR}/lib/x86/cpu_features.h
-  ${LIBDEFLATE_DIR}/lib/x86/crc32_impl.h
-  ${LIBDEFLATE_DIR}/lib/x86/crc32_pclmul_template.h
-  ${LIBDEFLATE_DIR}/lib/x86/decompress_impl.h
-  ${LIBDEFLATE_DIR}/lib/x86/matchfinder_impl.h
+  lib/adler32_vec_template.h
+  lib/bt_matchfinder.h
+  lib/crc32_table.h
+  lib/crc32_vec_template.h
+  lib/decompress_template.h
+  lib/gdeflate_decompress_template.h
+  lib/deflate_compress.h
+  lib/deflate_constants.h
+  lib/gzip_constants.h
+  lib/hc_matchfinder.h
+  lib/lib_common.h
+  lib/matchfinder_common.h
+  lib/unaligned.h
+  lib/zlib_constants.h
+  lib/x86/adler32_impl.h
+  lib/x86/cpu_features.h
+  lib/x86/crc32_impl.h
+  lib/x86/crc32_pclmul_template.h
+  lib/x86/decompress_impl.h
+  lib/x86/matchfinder_impl.h
+  lib_gdeflate/config.h 
+  lib_gdeflate/TileStream.h 
+  libdeflate/lib_gdeflate/Utils.h
 )
 
 set(PUBLIC_HEADERS
     libdeflate.h
+    GDeflate.h
 )
 
 if (WIN32)
@@ -80,4 +86,4 @@ target_include_directories(libdeflate_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 set_target_properties(libdeflate_static PROPERTIES
   OUTPUT_NAME deflate
-  PUBLIC_HEADER libdeflate.h)
+  PUBLIC_HEADER libdeflate.h GDeflate.h)
