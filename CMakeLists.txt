@@ -57,7 +57,7 @@ set(HEADERS
   lib/x86/matchfinder_impl.h
   lib_gdeflate/config.h 
   lib_gdeflate/TileStream.h 
-  libdeflate/lib_gdeflate/Utils.h
+  lib_gdeflate/Utils.h
 )
 
 set(PUBLIC_HEADERS
